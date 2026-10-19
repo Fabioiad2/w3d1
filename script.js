@@ -148,16 +148,16 @@ console.log(modifiedProd)
    Stampa tutti gli utenti nel formato "- Nome Cognome (città)".
    Esempio: "- Mario Rossi (Milano)"
 */
-
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+utenti.forEach(u=> console.log( `${u.nome} ${u.cognome} (${u.città})`))
 
 /* ESERCIZIO 8 — map a stringhe
    Usa map per creare nomiCompleti = ["Mario Rossi", "Anna Bianchi", ...].
    Stampa l'array.
 */
-
 /* SCRIVI QUI LA TUA RISPOSTA */
+const usermap = utenti.map((u)=> `${u.nome}${u.cognome}`)
+console.log("es8:",usermap)
 
 /* ESERCIZIO 9 — map a oggetti
    Usa map per creare utentiPlus: array di oggetti dove ogni utente ha tutte
@@ -169,12 +169,21 @@ console.log(modifiedProd)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const a = utenti.map(u=>({
+	 ...u, descrizione:"Default"
+}))
+
+console.log("a",a)
+
 /* ESERCIZIO 10 — filter attivi
    Usa filter per ottenere solo gli utenti con attivo: true.
    Stampa l'array risultante.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let userActive = utenti.filter((u=>u.attivo === true))
+
+console.log(userActive)
 
 /* ESERCIZIO 11 — filter combinato
    Usa filter per ottenere solo gli utenti maggiorenni (eta >= 18) che vivono a Milano.
@@ -182,6 +191,8 @@ console.log(modifiedProd)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const maggiorenni = utenti.filter(u=>u.eta >=18 && u.città === "Milano")
+console.log("maggiorenni",maggiorenni)
 
 /* ESERCIZIO 12 — find
    Usa find per trovare il primo utente con id === 4.
@@ -189,6 +200,7 @@ console.log(modifiedProd)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(utenti.find((u)=> u.id === 4))
 
 /* ESERCIZIO 13 — reduce
    a) Usa reduce per calcolare l'età media (somma età / numero utenti). Stampa.
@@ -196,6 +208,7 @@ console.log(modifiedProd)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
 
 /* ESERCIZIO 14 — sort
    a) Ordina gli utenti per eta crescente. Stampa l'array di nomi nell'ordine.
