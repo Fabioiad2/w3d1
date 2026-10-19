@@ -70,6 +70,7 @@ const quadrato = (n) => q = n * n
 console.log(quadrato(5))
 document.querySelector('#quadrato').textContent += `n*n = ${q}`
 
+
 /* ESERCIZIO 2 — Destructuring di oggetto
    Crea un oggetto "persona" con almeno 4 properties (es. nome, cognome, eta, città).
    Estrai 3 properties in 3 variabili usando destructuring.
@@ -225,7 +226,14 @@ console.log("eta ,media",mediaeta);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 console.log("ordine eta crescente",utenti.sort((a,b)=> a.eta - b.eta).map((i=>i.eta)))
-console.log("ordine alfabetico",utenti.sort())
+console.log("ordine alfabetico",utenti.sort((a,b)=>{
+	if(a.nome > b.nome){
+		return 1
+	}
+	else if(a.nome < b.nome){
+		return -1
+	}
+}))
 
 /* ESERCIZIO 15 — Chaining
    Componi una catena di metodi che:
@@ -236,4 +244,12 @@ console.log("ordine alfabetico",utenti.sort())
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-console.log(utenti.filter((u)=>u.attivo === true).map(u=>`${u.nome}${u.cognome}`).sort((a,b)=>a.nome - b.nome))
+console.log(utenti.filter((u)=>u.attivo === true).map(u=>`${u.nome}${u.cognome}`).sort((a,b)=>{
+	if(a.nome > b.nome){
+		return 1
+	}
+	else if(a.nome < b.nome){
+		return -1
+	}
+	
+}))
