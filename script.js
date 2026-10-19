@@ -59,11 +59,15 @@ const utenti = [
 
 /* ESERCIZIO 1 — Arrow function compatta
    Riscrivi questa funzione come arrow function in forma compatta:
-     function quadrato(n) { return n * n; }
+	 function quadrato(n) { return n * n; }
    Chiamala con quadrato(5) e stampa il risultato.
 */
 
+
 /* SCRIVI QUI LA TUA RISPOSTA */
+const quadrato = (n) => q = n * n
+console.log(quadrato(5))
+document.querySelector('#quadrato').textContent += `n*n = ${q}`
 
 /* ESERCIZIO 2 — Destructuring di oggetto
    Crea un oggetto "persona" con almeno 4 properties (es. nome, cognome, eta, città).
@@ -71,7 +75,19 @@ const utenti = [
    Stampa le 3 variabili.
 */
 
+
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const Person = {
+	name: "Fabio",
+	surname: "Iad",
+	age: 19,
+	city: "Caserta"
+}
+
+const { name, surname, age, city } = Person
+
+console.log(name, surname, age, city)
 
 /* ESERCIZIO 3 — Destructuring nei parametri
    Scrivi una arrow function "riepilogo" che riceve un utente e ritorna
@@ -80,6 +96,9 @@ const utenti = [
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const riepilogo = ({ name, surname, age }) => `$Ciao sono ${name}${surname} ed ho ${age}`
+
+console.log(riepilogo(Person))
 
 /* ESERCIZIO 4 — Spread su array
    Crea numeri = [1, 2, 3].
@@ -88,6 +107,10 @@ const utenti = [
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const numArray = [1, 2, 3]
+const modifiedArray = [...numArray, 99]
+console.log("array originale", numArray)
+console.log("array modificato", modifiedArray)
 
 /* ESERCIZIO 5 — Spread per concatenare
    frutti  = ["mela", "banana"]
@@ -96,6 +119,10 @@ const utenti = [
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const frutti = ["mela", "banana"]
+const verdure = ["carota", "spinaci"]
+const cibo = [...frutti, ...verdure]
+console.log("cibo",cibo)
 
 /* ESERCIZIO 6 — Spread su oggetto
    prodotto = { nome: "Cuffie", prezzo: 79.99 }
@@ -104,6 +131,18 @@ const utenti = [
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const products =  {
+	name:"cuffie",
+	price:79.99,
+}
+
+const modifiedProd = {...products, instock:true}
+console.log("Prodott originale",products)
+console.log(modifiedProd)
+
+
+
+
 
 /* ESERCIZIO 7 — forEach
    Stampa tutti gli utenti nel formato "- Nome Cognome (città)".
@@ -111,6 +150,7 @@ const utenti = [
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
 
 /* ESERCIZIO 8 — map a stringhe
    Usa map per creare nomiCompleti = ["Mario Rossi", "Anna Bianchi", ...].
