@@ -208,7 +208,14 @@ console.log(utenti.find((u)=> u.id === 4))
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const sommaEta = utenti.reduce((num,utente)=>  num + utente.eta, 0 )
+const TotaleUtenti = utenti.length
+const utentiAttivi = utenti.reduce((num,u)=>num + u.attivo, 0)
+console.log(utentiAttivi,"utenti attvi")
+console.log("totale utenti",TotaleUtenti);
+console.log(sommaEta,"totale eta")
+let mediaeta = sommaEta / TotaleUtenti
+console.log("eta ,media",mediaeta);
 
 /* ESERCIZIO 14 — sort
    a) Ordina gli utenti per eta crescente. Stampa l'array di nomi nell'ordine.
