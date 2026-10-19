@@ -54,7 +54,8 @@ const utenti = [
 		eta: 30,
 		attivo: true,
 		città: 'Milano',
-	},
+	}
+	
 ];
 
 /* ESERCIZIO 1 — Arrow function compatta
@@ -223,6 +224,7 @@ console.log("eta ,media",mediaeta);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log("ordine crescente",utenti.sort((a,b)=> a.eta < b.eta).sort((a,b)=>a.nome - b.nome))
 
 /* ESERCIZIO 15 — Chaining
    Componi una catena di metodi che:
@@ -233,3 +235,4 @@ console.log("eta ,media",mediaeta);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(utenti.filter((u)=>u.attivo === true).map(u=>`${u.nome}${u.cognome}`).sort((a,b)=>a.nome - b.nome))
