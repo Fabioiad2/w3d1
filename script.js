@@ -224,7 +224,8 @@ console.log("eta ,media",mediaeta);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-console.log("ordine crescente",utenti.sort((a,b)=> a.eta < b.eta).sort((a,b)=>a.nome - b.nome))
+console.log("ordine eta crescente",utenti.sort((a,b)=> a.eta - b.eta).map((i=>i.eta)))
+console.log("ordine alfabetico",utenti.sort())
 
 /* ESERCIZIO 15 — Chaining
    Componi una catena di metodi che:
